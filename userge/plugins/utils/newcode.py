@@ -1,7 +1,7 @@
-from userge import userge, Message, filters
+from userge import userge, Message
 
-@userge.on_filters(filters.me & filters.private)
-async def test_filter(message: Message):
+@userge.on_cmd("test", about="help text to this command")
+async def test_cmd(message: Message):
    # some other stuff
-   await message.reply(f"you typed - {message.text}")
+   await message.edit("testing...")
    # some other stuff
